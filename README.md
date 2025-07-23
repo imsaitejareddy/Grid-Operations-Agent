@@ -24,7 +24,7 @@ An advanced, AI-powered command center for monitoring and diagnosing issues in c
 - **Live Deployment:** Vercel (Frontend), Render (Backend)
 
 ## 🚀 How to Run Locally
-'''bash
+```bash
 **1. Clone the Repository:**
 
 git clone [https://github.com/your-username/your-repo-name.git](https://github.com/your-username/your-repo-name.git)
