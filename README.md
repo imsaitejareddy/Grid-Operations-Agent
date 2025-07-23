@@ -26,11 +26,11 @@ An advanced, AI-powered command center for monitoring and diagnosing issues in c
 ## 🚀 How to Run Locally
 
 **1. Clone the Repository:**
-```bash
+
 git clone [https://github.com/your-username/your-repo-name.git](https://github.com/your-username/your-repo-name.git)
 cd your-repo-name
 
-2. Setup the Backend:
+***2. Setup the Backend:
 
 Navigate to the backend folder: cd backend
 
@@ -57,7 +57,7 @@ Start the Flask server:
 Bash
 
 flask --app app run
-3. Setup the Frontend:
+***3. Setup the Frontend:
 
 Open a new terminal and navigate to the root project folder.
 
@@ -71,7 +71,7 @@ Start the React development server:
 Bash
 
 npm run dev
-4. Configuration:
+***4. Configuration:
 
 Add your API keys for Gemini and OpenWeatherMap in the agent_logic.py and App.jsx files, respectively.
 
