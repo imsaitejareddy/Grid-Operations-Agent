@@ -99,7 +99,7 @@ const WeatherWidget = () => {
   const [weatherData, setWeatherData] = useState(null);
   const lat = 31.9686;
   const lon = -99.9018;
-  const apiKey = 'ff8716450a6c3b1b8e175e73cef19569';
+  const apiKey = import.meta.env.VITE_OPENWEATHERMAP_API_KEY;
 
   useEffect(() => {
     const fetchWeather = async () => {

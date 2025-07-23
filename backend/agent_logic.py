@@ -8,9 +8,9 @@ import faiss
 from sentence_transformers import SentenceTransformer
 from langchain_google_genai import ChatGoogleGenerativeAI
 from langgraph.graph import StateGraph, END
+from dotenv import load_dotenv
+load_dotenv()
 
-if "GOOGLE_API_KEY" not in os.environ:
-    os.environ["GOOGLE_API_KEY"] = "AIzaSyCI2ypPRLKQ82htDy91Y8JokurMeP6oF3Y"
 
 _main_kb = None
 _log_kb = None
