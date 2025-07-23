@@ -20,3 +20,4 @@ langchain_google_genai
 pandas
 >>>>>>> a82e5ed (Connect frontend to Render backend)
 gunicorn
+python-dotenv
