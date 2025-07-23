@@ -1,28 +1,78 @@
 # Autonomous Operations Command Center 
 Preview: https://grid-operations-agent.vercel.app/
 
-An advanced, AI-powered command center for monitoring and diagnosing issues in complex systems. This application uses a multi-agent architecture with a dynamic, streaming UI to provide real-time analysis of both physical and software assets.
+### At a Glance
+
+This application is more than a dashboard; it's an interactive supervisor for a team of AI agents. It starts by pulling a dynamic feed of potential anomalies, ranging from physical equipment malfunctions to software errors. A user can dispatch an agent to investigate any of these events with a single click. The UI then visualizes the agent's entire thought process in real-time as a fluid, animated timeline. You can watch as the agent reasons about the problem, uses an intelligent LLM-powered router to select the best tool for the job, and performs a hybrid search to gather context from both relevant historical events and the most recent, user-submitted field reports. The system is designed with a complete feedback loop, allowing users to inject new information through live maintenance logs, which immediately updates the agent's knowledge base and influences its future conclusions.
+
+---
+## 🛠️ Tech Stack & Architecture
+
+This project utilizes a modern, end-to-end stack, from a reactive frontend to a powerful agentic backend.
+
+<div>
+  <img src="https://img.shields.io/badge/React-61DAFB?style=for-the-badge&logo=react&logoColor=black" alt="React"/>
+  <img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white" alt="Python"/>
+  <img src="https://img.shields.io/badge/Flask-000000?style=for-the-badge&logo=flask&logoColor=white" alt="Flask"/>
+  <img src="https://img.shields.io/badge/LangChain-FFFFFF?style=for-the-badge&logo=langchain&logoColor=black" alt="LangChain"/>
+  <img src="https://img.shields.io/badge/Tailwind_CSS-06B6D4?style=for-the-badge&logo=tailwindcss&logoColor=white" alt="Tailwind CSS"/>
+  <img src="https://img.shields.io/badge/Vercel-000000?style=for-the-badge&logo=vercel&logoColor=white" alt="Vercel"/>
+  <img src="https://img.shields.io/badge/Render-46E3B7?style=for-the-badge&logo=render&logoColor=black" alt="Render"/>
+</div>
+
+- **Frontend:**
+  - **Framework:** React (Vite)
+  - **Styling:** Tailwind CSS
+  - **Animation:** Framer Motion
+  - **Icons:** Lucide React, React-Icons
+  - **Live Data Streaming:** `@microsoft/fetch-event-source` (for SSE)
+
+- **Backend:**
+  - **Framework:** Flask
+  - **WSGI Server:** Gunicorn
+  - **Cloud SDK:** Boto3 (for AWS S3)
+
+- **AI & Data Processing:**
+  - **Orchestration:** LangChain & LangGraph
+  - **LLM:** Google Gemini Pro / Flash
+  - **Vector Database:** Faiss (Facebook AI Similarity Search)
+  - **Embeddings:** Sentence-Transformers
+  - **Data Handling:** Pandas
+
+- **Deployment & Infrastructure:**
+  - **Frontend Hosting:** Vercel
+  - **Backend Hosting:** Render
+  - **Data Storage:** AWS S3
+  - **Environment:** Docker (for building Lambda layers)
 
 
-## ✨ Features
+### Architectural Highlights
 
-- **Dynamic Event Feed:** The UI loads a live feed of potential anomalies for investigation.
-- **Real-Time Intelligence:** A live weather widget provides external context, and a dynamic log system allows users to inject new information in real-time.
-- **Agentic AI Core:** Powered by a **LangGraph** state machine, the AI agent can reason, use tools, and make intelligent decisions.
-- **Intelligent Tool Routing:** The agent uses an LLM call to analyze an anomaly and select the most appropriate tool from its arsenal (`RAG`, `Calculator`, `System Health Monitor`).
-- **Hybrid RAG System:** The agent's knowledge retrieval combines semantic search with a recency bias, ensuring it uses both relevant historical data and the latest user-submitted logs.
-- **Streaming UI:** The agent's entire thought process is streamed to the frontend in real-time, with a polished, animated timeline that visualizes each step of the investigation.
-- **Multi-Agent Architecture:** The system is designed as a "society of agents," where a supervisor agent (the LangGraph orchestrator) can delegate tasks to specialized agents (like the original Stack Trace Analyzer).
+- **Server-Sent Events (SSE):** The Flask backend streams the agent's step-by-step progress to the React frontend for a live, responsive user experience.
+- **Hybrid RAG:** The agent's retrieval strategy combines semantic vector search with a recency bias, allowing it to use both the most relevant historical data and the latest user-submitted information.
+- **Intelligent Tool Routing:** A dedicated LangGraph node uses an LLM call to analyze the anomaly and intelligently select the most logical tool, making the agent's behavior dynamic and context-aware.
+- **Lazy Loading:** AI models and knowledge base files are loaded on-demand ("lazy loaded") in the backend to ensure fast server startup times and efficient resource management.
 
-## 🛠️ Tech Stack
+## ⚙️ Development Workflow & Methodology
 
-- **Frontend:** React (Vite), Tailwind CSS, Framer Motion
-- **Backend:** Python, Flask
-- **AI/Agent Framework:** LangChain, LangGraph
-- **LLM:** Google Gemini Pro
-- **Vector Database:** Faiss
-- **Vector Embeddings:** Sentence-Transformers
-- **Live Deployment:** Vercel (Frontend), Render (Backend)
+This project was built using an iterative, feature-driven lifecycle. Each phase built upon the last, creating a robust and polished application from a simple prototype. The process is visualized below, showing the flow from initial concept to final deployment.
+
+```mermaid
+graph LR
+    subgraph Legend
+        direction LR
+        A1(💡 Core Idea) --> B1(🏗️ Backend Dev) --> C1(🎨 Frontend Dev) --> D1(🔗 Integration) --> E1(🚀 Deployment)
+    end
+```
+Phase 1: Conception & Core Prototyping. The project began by establishing a clear problem statement and building a minimal viable product (MVP)—a standalone Python agent capable of analyzing data. This validated the core AI logic before any UI was developed.
+
+Phase 2: Agentic Architecture. The initial prototype was evolved into a sophisticated, multi-tool agent using LangGraph. This phase focused on developing the agent's reasoning capabilities, its RAG-based knowledge system, and its ability to use specialized tools.
+
+Phase 3: UI/UX & Frontend Development. With a robust backend in place, the focus shifted to creating a polished user experience. The frontend was built in React, with a strong emphasis on a clean, Apple-inspired aesthetic, fluid animations, and clear data visualization.
+
+Phase 4: Real-Time Integration. The frontend and backend were connected to create a complete feedback loop. This involved implementing a streaming API (SSE) and enabling the agent's knowledge base to be updated in real-time based on user input, making the system truly dynamic.
+
+Phase 5: Deployment & Documentation. The final phase involved deploying the frontend and backend to production environments (Vercel and Render) and creating comprehensive documentation. The use of Git for version control and the CI/CD capabilities of the hosting platforms allowed for seamless updates.
 
 ## 🚀 How to Run Locally
 ```bash
