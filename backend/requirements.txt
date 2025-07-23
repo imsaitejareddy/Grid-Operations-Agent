@@ -1,0 +1,10 @@
+Flask
+Flask-Cors
+boto3
+faiss-cpu
+sentence-transformers
+langgraph
+langchain
+langchain_google_genai
+pandas
+gunicorn
