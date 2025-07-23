@@ -6,7 +6,7 @@ from agent_logic import agent_app
 import kb_manager
 
 app = Flask(__name__)
-CORS(app, resources={r"/api/*": {"origins": "*"}})
+CORS(app, resources={r"/api/*": {"origins": "https://grid-operations-agent.vercel.app"}})
 
 mock_anomaly_feed = [
     { "id": 1, "type": "Performance Degradation", "description": "Turbine #4 is consistently producing 15% less power than the theoretical curve predicts.", "short_desc": "Underperformance on Turbine #4." },
