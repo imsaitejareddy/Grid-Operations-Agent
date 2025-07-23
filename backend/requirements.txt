@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 Flask
 Flask-Cors
 boto3
@@ -7,4 +8,15 @@ langgraph
 langchain
 langchain_google_genai
 pandas
+=======
+Flask
+Flask-Cors
+boto3
+faiss-cpu
+sentence-transformers
+langgraph
+langchain
+langchain_google_genai
+pandas
+>>>>>>> a82e5ed (Connect frontend to Render backend)
 gunicorn

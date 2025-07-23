@@ -167,7 +167,7 @@ function App() {
     const fetchInitialData = async () => {
       const fetchEvents = async () => {
         try {
-          const response = await fetch('http://127.0.0.1:5000/api/events');
+          const response = await fetch('https://grid-operations-agent.onrender.com/api/events');
           const data = await response.json();
           setEvents(data);
         } catch (error) {
@@ -176,7 +176,7 @@ function App() {
       };
       const fetchLogs = async () => {
         try {
-          const response = await fetch('http://127.0.0.1:5000/api/logs');
+          const response = await fetch('https://grid-operations-agent.onrender.com/api/logs');
           const data = await response.json();
           setRecentLogs(data);
         } catch (error) {
@@ -192,13 +192,13 @@ function App() {
   const handleSubmitLog = async () => {
     if (!logInput.trim()) return;
     try {
-      await fetch('http://127.0.0.1:5000/api/log', {
+      await fetch('https://grid-operations-agent.onrender.com/api/log', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ log_message: logInput }),
       });
       setLogInput("");
-      const response = await fetch('http://127.0.0.1:5000/api/logs');
+      const response = await fetch('https://grid-operations-agent.onrender.com/api/logs');
       const data = await response.json();
       setRecentLogs(data);
     } catch (error) {
@@ -209,7 +209,7 @@ function App() {
   const handleInvestigate = (eventDescription) => {
     setInvestigationSteps([]);
     setIsInvestigating(true);
-    fetchEventSource('http://127.0.0.1:5000/api/investigate', {
+    fetchEventSource('https://grid-operations-agent.onrender.com/api/investigate', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ event: eventDescription }),
