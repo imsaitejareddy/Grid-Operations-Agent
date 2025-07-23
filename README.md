@@ -5,6 +5,8 @@ Preview: https://grid-operations-agent.vercel.app/
 
 This application is more than a dashboard; it's an interactive supervisor for a team of AI agents. It starts by pulling a dynamic feed of potential anomalies, ranging from physical equipment malfunctions to software errors. A user can dispatch an agent to investigate any of these events with a single click. The UI then visualizes the agent's entire thought process in real-time as a fluid, animated timeline. You can watch as the agent reasons about the problem, uses an intelligent LLM-powered router to select the best tool for the job, and performs a hybrid search to gather context from both relevant historical events and the most recent, user-submitted field reports. The system is designed with a complete feedback loop, allowing users to inject new information through live maintenance logs, which immediately updates the agent's knowledge base and influences its future conclusions.
 
+<img width="1080" height="720" alt="image" src="https://github.com/user-attachments/assets/ff3b7e94-9205-4e97-83ee-4f72dda6cb76" />
+
 ---
 ## 🛠️ Tech Stack & Architecture
 
