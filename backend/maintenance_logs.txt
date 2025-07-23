@@ -1,0 +1,7 @@
+2018-03-15: Turbine #4 emergency stop due to gearbox overheating alarm. Inspection required.
+2018-04-22: Routine maintenance on all turbines. Oil levels checked, filters replaced.
+2018-06-10: Turbine #2 reporting intermittent blade pitch errors. System reset performed.
+2018-09-05: Grid connection lost for 2 hours due to substation fault. Power output was zero for all turbines.
+2018-11-28: Complaints of unusual noise from Turbine #4. No errors found on inspection.
+2025-07-22: Turbine #4 Gear Box issue resolved. Overheating alarm stopped
+2025-07-22: Turbine #2 Birds hit. Wing damaged requires maintenance
